@@ -21,10 +21,14 @@ Nhập lựa chọn: """).strip()
             print("Mô tả không được rỗng!")
             continue
             
-        # Lấy chuỗi hashtag, tách từng hashtag ra, bỏ khoảng trắng thừa, và chỉ giữ những hashtag không rỗng
+        hashtags = []
 
-        hashtags = [x.strip() for x in hashtag_str.split(",") if x.strip()]
-        
+        for i in hashtag_str.split(","):
+            i = i.strip()   # xóa khoảng trắng đầu cuối
+            
+            if i != "":     # nếu không rỗng thì thêm vào list
+                hashtags.append(i)
+                
         print("\n--- BAO CAO ---")
         print("Tai khoan:", username)
         print("Tieu de:", title.title())
